@@ -1,0 +1,49 @@
+{{head}}
+<body class="bg-gray-50 font-sans">
+  <div class="max-w-xl mx-auto px-4 py-10">
+    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+      <h2 class="text-xl font-bold text-gray-800 mb-6 text-center">Edit Student Record</h2>
+      
+      <form method="post" action="/view/students/{{data.id}}/edit" class="space-y-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Student ID</label>
+          <input type="text" name="StudentId" value="{{data.StudentId}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">First Name</label>
+          <input type="text" name="FirstName" value="{{data.FirstName}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Middle Name</label>
+          <input type="text" name="MiddleName" value="{{data.MiddleName}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600">
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Last Name</label>
+          <input type="text" name="LastName" value="{{data.LastName}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Course</label>
+          <input type="text" name="Course" value="{{data.Course}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Year Level</label>
+          <input type="number" name="YearLevel" value="{{data.YearLevel}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Section</label>
+          <input type="text" name="Section" value="{{data.Section}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Status</label>
+          <input type="text" name="Status" value="{{data.Status}}" class="w-full border border-gray-300 p-2 rounded mt-1 focus:outline-none focus:border-purple-600" required>
+        </div>
+        
+        <div class="text-center pt-4">
+          <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded shadow transition duration-200">
+            Update Student
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>

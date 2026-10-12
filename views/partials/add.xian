@@ -1,0 +1,11 @@
+<form method="post" action="#">
+  <input type="text" name="StudentId" placeholder="Student ID" value="{{data.StudentId}}">
+  <input type="text" name="FirstName" placeholder="First Name" value="{{data.FirstName}}">
+  <input type="text" name="MiddleName" placeholder="Middle Name" value="{{data.MiddleName}}">
+  <input type="text" name="LastName" placeholder="Last Name" value="{{data.LastName}}">
+  <input type="text" name="Course" placeholder="Course" value="{{data.Course}}">
+  <input type="number" name="YearLevel" placeholder="Year Level" value="{{data.YearLevel}}">
+  <input type="text" name="Section" placeholder="Section" value="{{data.Section}}">
+  <input type="text" name="Status" placeholder="Status" value="{{data.Status}}">
+  <input type="submit" value="Submit">
+</form>

@@ -1,0 +1,77 @@
+{{head}}
+<body class="bg-gray-50 font-sans">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    
+    <!-- Title -->
+    <h2 class="text-2xl font-bold text-center text-gray-800 mb-8 uppercase tracking-wide">STUDENT MANAGEMENT SYSTEM</h2>
+
+    <!-- Add Form-->
+    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-10">
+      <form method="post" action="/students" class="space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <input type="text" name="StudentId" placeholder="Student ID" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="text" name="FirstName" placeholder="First Name" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="text" name="MiddleName" placeholder="Middle Name" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600">
+          <input type="text" name="LastName" placeholder="Last Name" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="text" name="Course" placeholder="Course" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="number" name="YearLevel" placeholder="Year Level" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="text" name="Section" placeholder="Section" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+          <input type="text" name="Status" placeholder="Status (Active/Inactive)" class="border border-gray-300 p-2 rounded focus:outline-none focus:border-purple-600" required>
+        </div>
+        <div class="text-center mt-4">
+          <button type="submit" class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-2 rounded shadow transition duration-200">
+            Add Student
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Table Container -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden border border-gray-200">
+      <table class="w-full border-collapse text-left text-sm text-gray-600">
+        <thead class="bg-gray-100 text-gray-700 uppercase text-xs tracking-wider border-b border-gray-200">
+          <tr>
+            <th class="p-3 border-r">Student ID</th>
+            <th class="p-3 border-r">First Name</th>
+            <th class="p-3 border-r">Middle Name</th>
+            <th class="p-3 border-r">Last Name</th>
+            <th class="p-3 border-r">Course</th>
+            <th class="p-3 border-r">Year</th>
+            <th class="p-3 border-r">Section</th>
+            <th class="p-3 border-r">Status</th>
+            <th class="p-3 text-center">Action</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-200">
+          {{#each data}}
+          <tr class="hover:bg-purple-50 transition duration-150">
+            <td class="p-3 border-r font-medium text-gray-900">{{StudentId}}</td>
+            <td class="p-3 border-r">{{FirstName}}</td>
+            <td class="p-3 border-r">{{MiddleName}}</td>
+            <td class="p-3 border-r">{{LastName}}</td>
+            <td class="p-3 border-r">{{Course}}</td>
+            <td class="p-3 border-r">{{YearLevel}}</td>
+            <td class="p-3 border-r">{{Section}}</td>
+            <td class="p-3 border-r">
+              <span class="px-2 py-1 text-xs font-semibold rounded bg-purple-100 text-purple-700">
+                {{Status}}
+              </span>
+            </td>
+            <td class="p-3 text-center space-x-2">
+              <a href="/view/students/{{id}}/edit" class="text-purple-600 hover:underline font-medium">Edit</a>
+              <span class="text-gray-300">|</span>
+              <a href="#" onclick="if(confirm('Are you sure you want to delete?')) { fetch('/students/{{id}}', {method: 'DELETE'}).then(() => location.reload()); }" class="text-red-600 hover:underline font-medium">Delete</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer Attribution -->
+    <div class="text-center text-xs text-gray-400 mt-8">
+      © 2026 XianFire Framework — Built with 💜 at Mindoro State University
+    </div>
+
+  </div>
+</body>
